@@ -1,0 +1,207 @@
+Programa que le o
+# nome, idade e sexo de 4 pessoas. No final do
+# programa mostre:
+# A média de idade do grupo
+# Qual é o nome do homem mais velho
+# Quantas mulheres tem menos de 20 anos
+import time
+import os
+os.system('cls')
+from google.colab import output
+nome=''
+idade=0
+sexo=''
+idadeMedia=0
+nomeV=''
+qtdMulheres20=0
+idadeV=0
+# preciso de 4 pessoas
+for i in range(1,5):
+    nome=input(f'Digite o nome {i}º pessoa: ')
+    idade=int(input(f'Digite a idade do {nome}: '))
+    sexo=input(f'Digite o sexo do {nome} (H/M): ').upper()
+# se é homem ou mulher
+#     se for homem precisa comparar as idades
+#     e salvar o nome do mais velho
+    if sexo == 'H':
+        if idade > idadeV:
+            idadeV=idade
+            nomeV=nome
+#     se for mulher se tem menos de 20 anos
+    if sexo=='M' and idade<20:
+        qtdMulheres20+=1
+#     da soma de todas as idades
+    idadeMedia+=idade
+    time.sleep(2)
+    output.clear()
+    os.system('cls')
+print(f'A média de idade do grupo? {int(idadeMedia/4)}\n'
+    f'Qual é o nome do homem mais velho? {nomeV}\n'
+    f'Quantas mulheres tem menos de 20 anos ? {qtdMulheres20}\n')
+
+
+
+
+Programa que le uma frase qualquer e diga se ela é um
+# palíndromo, desconsiderando espaços.
+# Exemplo:
+# APOS A SOPA
+# A SACADA DA CASA
+# A TORRE DA DERROTA
+
+frase=input('Digite um texto: ').replace(' ', '')
+for x in range(len(frase)):
+    if frase[x]!=frase[-x-1]:
+        print('Não é um palindromo')
+        break
+else:
+    print('É um palindromo')
+
+
+
+
+
+Programa que le dois valores e mostre um menu na tela:
+# [1] Somar
+# [2] Multiplicar
+# [3] Maior
+# [4] Novos Números
+# [5] Sair do programa
+# Seu programa deverá realizar a operação solicitada em cada caso.
+
+num1=0
+num2=0
+menu=''
+
+num1=float(input('Digite um numero: '))
+num2=float(input('Digite um numero: '))
+while True:
+    menu=input('[1] Somar\n[2] Multiplicar\n'
+               '[3] Maior\n[4] Novos Números\n[5] Sair do programa').upper()
+    if menu=='1' or menu=='SOMAR':
+        print(num1+num2)
+    elif menu=='2' or menu=='MULTIPLICAR':
+        print(num1*num2)
+    elif menu=='3' or menu =='MAIOR':
+        print(max(num1,num2))
+    elif menu=='4' or menu=='NOVOS NUMEROS':
+        num1 = float(input('Digite um numero: '))
+        num2 = float(input('Digite um numero: '))
+    elif menu=='5' or menu=='SAIR':
+        print('saiu')
+        break
+    else:
+        print('Apenas uma das opções!!')
+
+
+
+
+
+Programa que jogue par ou impar com o computador. O jogo
+# só será interrompido quando o jogador perder, mostrando o total de
+# vitorias consecutivas que ele conquistou no final do jogo.
+import random
+
+placar=0
+
+while True:
+    num1=random.randint(0,10)
+    num=int(input('Digite o numero : '))
+    soma=num+num1
+    menu=input('Par ou Ímpar\n\nescolha: ').lower()
+    if menu=='par':
+        if soma%2==0:
+            placar = placar + 1
+            print(f'PC: {num1}')
+            print(f'pontos seguidos {placar} ')
+
+
+        else:
+            print(f'PC: {num1}')
+            print('PC venceu ímpar ganhou')
+            break
+    else:
+        if soma%2==0:
+            print(f'PC: {num1}')
+            print('PC venceu par ganhou')
+            break
+        else:
+            placar += 1
+            print(f'PC: {num1}')
+            print(f'pontos seguidos {placar} ')
+print(f'Jogador ganhou {placar} vezes seguidas')
+
+
+
+Programa que le a idade e o sexo de varias pessoas. A cada
+# pessoa cadastrada, o programa deverá perguntar se o usuário quer ou
+# não continuar. No final, mostre:
+# A) Quantas pessoas tem mais de 18 anos.
+# B) Quantos homens foram cadastrados.
+# C) Quantas mulheres tem menos de 20 anos.
+pessoasMais18=0
+qtd_homens=0
+qtd_mulheres20=0
+idade=0
+sexo=''
+while True:
+    # leitura dos campos
+    genero=input('escolha um genero (M/F): ').upper()
+    idade=int(input('Digite a sua idade: '))
+    # A) Quantas pessoas tem mais de 18 anos.
+    if idade >18:
+        pessoasMais18+=1
+
+    # B) Quantos homens foram cadastrados.
+    if genero=='M':
+        qtd_homens+=1
+
+    # C) Quantas mulheres tem menos de 20 anos.
+    if genero=='F' and idade <20:
+        qtd_mulheres20+=1
+
+    sair=input('Deseja sair? (s/n)').lower()
+    if sair=='s':
+        print('Pessoas com mais de 18 anos: ', pessoasMais18)
+        print('quantidade de homens cadastrados: ',qtd_homens)
+        print('Mulheres com menos de 20 anos: ', qtd_mulheres20)
+        break
+
+
+
+
+Programa que le o nome e o preço de vários produtos. O
+# programa deverá perguntar se o usuário vai continuar. No final,
+# mostre:
+# A) Qual é o total gasto na compra.
+# B) Quantos produtos custam mais de R$ 100,00.
+# C) Qual é o nome do produto mais barato.
+
+nomeProd=''
+valor=0
+total=0
+nomeProdBarato=''
+valorBarato=float('inf')
+qtaProd100=0
+while True:
+    # cadastro dos itens
+    nomeProd=input('Nome do produto: ').capitalize()
+    valor=float(input('Valor do produto: '))
+    # A) Qual é o total gasto na compra.
+    total=total+valor
+
+    # B) Quantos produtos custam mais de R$ 100,00.
+    if valor > 100:
+        qtaProd100+=1
+
+    # C) Qual é o nome do produto mais barato.
+    if valorBarato > valor:
+        valorBarato=valor
+        nomeProdBarato=nomeProd
+
+    sair=input('Deseja para? (s/n)').lower()
+    if sair=='s':
+        break
+print(f'O valor total da compra é de {round(total, 2)}')
+print(f'quantidade de produtos com mais de 100R$ {qtaProd100}')
+print(f'O produto mais barato é {nomeProdBarato}')
