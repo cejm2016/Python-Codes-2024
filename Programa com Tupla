@@ -1,0 +1,21 @@
+Programa que vai gerar cinco números aleatórios e colocar
+# em uma tupla.
+
+# Depois disso, mostre a listagem de números gerados e também
+# indique o menor e o maior valor que estão na Tupla.
+
+import random
+
+numeros=[]
+for i in range(5):
+    num=random.randint(0,10)
+    numeros.append(num)
+tupla=tuple(numeros)
+print(tupla)
+# ---------------------------------------------------------
+
+numeros2=tuple(random.randint(0,10) for x in range(5))
+print(numeros2)
+# ----------------------------------------------------------
+print(max(numeros2), max(numeros))
+print(min(numeros2), min(numeros))
