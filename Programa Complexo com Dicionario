@@ -1,0 +1,48 @@
+Programa que le nome, sexo e idade de várias pessoas,
+# guardando os dados de casa pessoa em um dicionário e todos os
+# dicionários em uma lista. No final, mostre:
+# A) Quantas pessoas foram cadastradas.
+# B) A média de idade do grupo.
+# C) Uma lista com todas as mulheres.
+# D) Uma lista com todas as pessoas com idade acima da média.
+contador=0
+listaM=[]
+listaMed=[]
+pessoa={}
+media=0
+listaAll=[]
+while True:
+    pessoa['nome']=input('Digite o seu nome: ')
+    pessoa['idade']=int(input('Digite a sua idade: '))
+    pessoa['sexo']=input('escolha o sexo: (H/M)').lower()
+    listaAll.append(pessoa.copy())
+    # A) Quantas pessoas foram cadastradas.
+    contador+=1
+    # C) Uma lista com todas as mulheres.
+    if pessoa['sexo']=='m':
+        listaM.append(pessoa.copy())
+
+    # B) A média de idade do grupo.
+    media+=pessoa['idade']
+    sair=input('Deseja sair? (s/n)')
+    if sair.lower() =='s':
+        break
+media/=contador
+print(listaAll)
+
+print(f'Foram cadastradas {contador} pessoas')
+print(f'A media de idade do grupo é {int(media)}')
+print("Lista de mulheres")
+for x in listaM:
+    for k,v in x.items():
+        print(f'{k}: {v}')
+    print('____________________')
+
+for i in range(len(listaAll)):
+    if listaAll[i]['idade'] >  media:
+        listaMed.append(listaAll[i].copy())
+print('Lista Pessoas acima da media de idade')
+for j in listaMed:
+    for k,v in j.items():
+        print(f'{k}: {v}')
+    print('____________________')
