@@ -1,0 +1,48 @@
+Programa que le vários números e colocar em uma lista. Depois disso, mostre:
+# A) Quantos números foram digitados.
+# B) A lista de valores, ordenada de forma decrescente.
+# C) Se o valor 5 foi digitado e esta ou não na lista.
+
+lista=[]
+num=0
+sair=''
+contador=0
+while True:
+    num=int(input('Digite um numero: '))
+    lista.append(num)
+    sair=input('Deseja sair? (s/n): ').lower()
+# A) Quantos números foram digitados.
+    contador+=1
+    if sair=='s':
+        break
+# B) A lista de valores, ordenada de forma decrescente.
+lista.sort(reverse=True)
+# C) Se o valor 5 foi digitado e esta ou não na lista.
+print('o 5 esta na lista' if 5 in lista
+          else 'O 5 não esta na lista')
+print(contador, len(lista))
+print(lista)
+
+
+
+
+Programa onde o usuário possa digitar cinco valores numéricos e cadastre-os em uma lista,
+# já na sua posição correta de inserção (sem usar o sort()).
+# No final mostre a lista ordenada na tela
+
+numeros=[]
+num=0
+for x in range(1,6):
+    num=int(input(f'Digite o {x}º numero:\n'))
+    numeros.append(num)
+for j in range(len(numeros)):
+    for i in range(len(numeros)):
+        if numeros[j] < numeros[i]:
+            numeros[j],numeros[i] = numeros[i],numeros[j]
+            print(numeros)
+print(numeros)
+
+
+
+
+
