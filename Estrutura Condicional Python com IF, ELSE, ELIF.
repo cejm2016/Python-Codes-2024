@@ -1,0 +1,248 @@
+Programa que faça o computador “pensar” em um
+# número int# DESAFIO 28
+# inteiro entre 5 e 0 e peça para o usuário tentar
+# descobrir qual foi o número escolhido pelo computador.
+
+# O programa deverá escrever na tela se o usuário venceu ou
+# perdeu.
+import random
+
+numeroPc=random.randint(0,5)
+numeroJogador=int(input('Digite um numero inteiro: '))
+if numeroPc == numeroJogador:
+    print('acertou')
+else:
+    print('errou')
+
+print('Acertou' if numeroPc == numeroJogador else 'Errou')
+
+
+
+
+
+Programa que le a velocidade de um carro.
+# Se ele ultrapassar 80km/h, mostre uma mensagem dizendo que
+# ele foi multado.
+# A multa vai custar R$ 7,00 por cada Km acima do limite.
+
+velocida=float(input('Digite a velocidade: '))
+if velocida > 80:
+    print(f'O valor da multa é {(velocida-80)*7:,.2f}R$')
+
+
+
+
+
+
+Programa que le um número inteiro e mostre na tela
+# se ele é PAR ou IMPAR.
+num=int(input('Digite um numero: '))
+
+print('Par' if num%2==0 else 'Impar')
+
+if num%2==0:
+    print('Par')
+else:
+    print('Impar')
+
+
+
+
+Programa que pergunte a distância de uma
+# viagem em Km. Calcule o preço da passagem cobrando R$
+# 0,50 por Km para viagens de até 200 Km e R$ 0,45 para
+# viagens mais longas.
+distancia=float(input('Digite a distancia: '))
+print(f'O valor da viagem ficou {distancia*0.45:.2f}R$' if distancia>200
+      else f'O valor da viagem ficou {distancia*0.5:.2f}R$')
+
+if distancia <=200:
+    preco=distancia*0.5
+else:
+    preco=distancia*0.45
+print(f'O valor da viagem ficou {preco:.2f}R$')
+
+
+
+
+
+Programa que le um ano qualquer e mostre se ele é
+# BISSEXTO.
+# O ano bissexto ocorre a cada 4 anos (exceto em anos múltiplos
+# de 100 que não são múltiplos de 400)
+
+ano=int(input('Ano: '))
+if ano%4==0:
+    if ano%100==0 and ano%400!=0:
+        print('Não é bisexto')
+    else:
+        print('Bisexto')
+else:
+    print('Não é bisexto')
+
+
+if ano % 4 == 0 and ano % 100 != 0 or ano % 400 == 0:
+print('O ano é bissexto')
+else:
+print('O ano não é bissexto')
+
+
+
+
+
+Programa que le numeros inputados e exibe no final qual é o maior e o menor digitado.
+
+num1=int(input('Digite um numero: '))
+num2=int(input('Digite um numero: '))
+num3=int(input('Digite um numero: '))
+
+maior=num1
+menor=num1
+
+if num3 > maior:
+    maior = num3
+if num2 > maior:
+    maior = num2
+if num2 < menor:
+    menor=num2
+if num3 < menor:
+    menor=num3
+print(max(num1,num2,num3))
+print(min(num1,num2,num3))
+print(maior)
+print(menor)
+
+
+
+
+
+Programa que pergunte o salário de um funcionário
+# e calcule o valor do seu aumento.
+# Para salários superiores a R$ 1.250,00, calcule um aumento de
+# 10%.
+#
+# Para salários inferiores ou iguais, o aumento é de 15%.
+salario=float(input('Digite o salrio: '))
+print(f'Novo salario: {(salario*0.10)+salario:,.2f}' if salario > 1250
+      else f'Novo salario: {(salario*0.15)+salario:,.2f}')
+if salario > 1250:
+    print(f'Novo salario: {(salario * 0.10) + salario:,.2f}')
+else:
+    print(f'Novo salario: {(salario * 0.15) + salario:,.2f}')
+
+
+
+
+
+
+Programa que le o comprimento de três retas
+# e diga ao usuário se elas podem ou não formar um triângulo.
+#
+# Condições Necessárias:
+#
+# a + b > c
+# a + c > b
+# b + c > a
+
+reta1=int(input('Digite o valor da reta 1:\n'))
+reta2=int(input('Digite o valor da reta 2:\n'))
+reta3=int(input('Digite o valor da reta 3:\n'))
+
+print(f'É um triangulo' if reta1+reta2>reta3
+      and reta2+reta3> reta1 and reta3+ reta1>reta2
+      else 'Não é um triangulo')
+
+if reta1+reta2>reta3 and reta2+reta3> reta1 and reta3+ reta1>reta2:
+    print('É um triangulo')
+else:
+    print('Não é um triangulo')
+
+
+
+Programa para aprovar um empréstimo bancário para a
+# compra de uma casa. O programa vai perguntar o valor da casa, o
+# salário do comprador e em quantos anos ele vai pagar.
+# Calcule o valor da prestação mensal, sabendo que ela não pode exceder
+# 30% do salário ou então o empréstimo será negado.
+valorCasa=float(input('Digite o valor da casa: '))
+salario=float(input('Digite o salario: '))
+tempo=int(input('Digite em quantos anos vai pagar: '))
+tempo *= 12 # Isso é a mesma coisa: tempo = tempo * 12 -- quantidade de meses
+salario *=0.3 # Isso é a mesma coisa: salario = salario * 0.3 -- 30% do salario
+valorCasa/=tempo # Isso é a mesma coisa: valorCasa = valorCasa/ tempo -- Valor da parcela
+if valorCasa > salario:
+    print(f'Não foi aprovado!\n30% do salario: {salario:,.2f}'
+          f'\nParcela: {valorCasa:,.2f}')
+else:
+    print(f'Financiamento aprovado\n30% do salario: {salario:,.2f}\n'
+          f'Parcela: {valorCasa:,.2f}')
+
+
+
+
+
+Programa que le dois números inteiros e compare- os,
+# mostrando na tela uma mensagem:
+# O primeiro valor é maior
+# O segundo valor é maior
+# Não existe valor maior, os dois são iguais
+numero1=int(input('Digite um numero: '))
+numero2=int(input('Digite um numero: '))
+if numero1>numero2:
+    print(f'o maior é: {numero1}')
+elif numero1 == numero2:
+    print(f'São iguais')
+else:
+    print(f'O maior é: {numero2}')
+print(f'O maior valor é {max(numero2,numero1)}' if numero1!=numero2
+      else f'São iguais {numero2}')
+
+
+
+
+
+Programa que le o ano de nascimento de um jovem e
+# informe, de acordo com sua idade:
+# Se ele ainda vai se alistar ao serviço militar
+# Se é a hora de se alistar
+# Se já passou o tempo do alistamento
+# Seu programa também deverá mostrar o tempo que falta ou que passou
+# do prazo.
+idade=2024-int(input('Digite o ano de nascimento: '))
+if idade >18:
+    print(f'Passo do alistamento.  {idade-18} anos.')
+elif idade==18:
+    print('É hora de se alistar!!')
+else:
+    print(f'Faltam {18-idade} anos para o alistamento')
+
+
+
+
+Jogo de Pedra Papel e Tesoura.
+
+import random
+pc=random.choice(['Pedra', 'Papel', 'Tesoura'])
+jogador=input('Menu--------------------\n1-Pedra\n'
+              '2-Papel\n3-Tesoura\n\nDigite:  ').title()
+if pc=='Pedra':
+    if jogador == 'Papel':
+        print(f'Jogador venceu.\n Jogador {jogador }🖐 x {pc}👊 Maquina')
+    elif jogador=='Pedra':
+        print(f'Empate.\n Jogador {jogador}👊 x {pc}👊 Maquina')
+    else:
+        print(f'Maquina venceu.\n Jogador {jogador}✌ x {pc}👊 Maquina')
+elif pc=='Papel':
+    if jogador == 'Papel':
+        print(f'Empate.\n Jogador {jogador} x {pc} Maquina')
+    elif jogador=='Pedra':
+        print(f'Maquina venceu.\n Jogador {jogador} x {pc} Maquina')
+    else:
+        print(f'Jogador venceu.\n Jogador {jogador} x {pc} Maquina')
+else:
+    if jogador == 'Papel':
+        print(f'Maquina venceu.\n Jogador {jogador} x {pc} Maquina')
+    elif jogador=='Pedra':
+        print(f'Jogador venceu.\n Jogador {jogador} x {pc} Maquina')
+    else:
+        print(f'Empate.\n Jogador {jogador} x {pc} Maquina')
