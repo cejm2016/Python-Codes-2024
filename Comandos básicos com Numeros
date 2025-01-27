@@ -1,0 +1,31 @@
+# As variaveis devem sempre ser declaradas no inicio do código
+n1=10
+n2=5
+#Operador de soma
+soma = n1 + n2
+#Operador de subtração
+subtracao = n1 - n2
+#Operador de multiplicação
+multiplicacao = n1 * n2
+#Operador de divisão
+divisao = n1 / n2
+#Operador de Divisão Inteira
+divisaoInteira = n1 // n2
+#Operador de potência
+potencia = n1 ** n2
+#Operador Módulo
+restoDaDivisão = n1 % n2
+#Atribui dados digitado pelo usuario e converte em Numero Inteiro
+numeroInteiro = int(input("Digite um numero Inteiro: "))
+#Atribui dados digitado pelo usuario e converte em Numero Decimal
+numeroReal = float(input("Digite um numero Decimal: "))
+#Atribui dados digitado pelo usuario e converte em Bool
+booleano = bool(input("Digite um valor Boleano: "))
+#Atribui dados digitado pelo usuario e converte em Texto
+string = str(input("Digite um texto: "))
+n='5'
+print(n.isnumeric())
+print(n.isalpha())
+print(n.isalnum())
+print(n.isupper())
+print(n.isdecimal())
