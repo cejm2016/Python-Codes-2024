@@ -1,0 +1,26 @@
+Tupla preenchida com os 20 primeiros colocados da Tabela do
+# Campeonato Brasileiro Serie B de Futebol, na ordem de colocação. Depois
+# mostre:
+# A) Apenas os 5 primeiros colocados.
+# B) Os últimos 4 colocados da tabela.
+# C) Uma lista com os times em ordem alfabética.
+# D) Em qual posição na tabela está o time do Santos.
+
+serireB=("América-MG", "Goiás", "Avaí", "Santos", "Sport", "Ceará", "Operário-PR", "Mirassol", "Coritiba" ,
+         "Vila Nova", "Novorizontino" ,"Amazonas", "Chapecoense" ,"Ponte Preta",
+         "CRB" ,"Paysandu", "Botafogo-SP" ,"Ituano", "Brusque" ,"Guarani")
+# A) Apenas os 5 primeiros colocados.
+print('A) Apenas os 5 primeiros colocados.')
+for x,c in enumerate(serireB[:5]):
+    print(x+1 ,c)
+# B) Os últimos 4 colocados da tabela.
+print('\n\nB) Os últimos 4 colocados da tabela.')
+for pos, time in enumerate(serireB[16:]):
+    print(pos+17, time)
+# C) Uma lista com os times em ordem alfabética.
+print('\n\nC) Uma lista com os times em ordem alfabética.')
+for x in sorted(serireB):
+    print(x)
+# D) Em qual posição na tabela está o time do Santos.
+print('D) Em qual posição na tabela está o time do Santos.')
+print(f'O Santos esta na {serireB.index('Santos')+1}º posição')
