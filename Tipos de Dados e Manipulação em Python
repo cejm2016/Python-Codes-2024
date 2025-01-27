@@ -1,0 +1,152 @@
+Programa para efetuar a leitura de um número inteiro e
+# apresentar o resultado do quadrado deste número.
+
+# variavel n1 recebe  um valor inteiro do usuario "\n" pula uma linha
+n1 = int(input('digite um numero:\n'))
+# variavel potencia recebe n1 ao quadrado
+potencia=n1**2
+# imprime para o usuario
+print('O quadro desse numero é:', potencia)
+# imprime para o usuario
+print('O quadro desse numero é:', n1**2)
+
+
+Programa que le dois caracteres e imprima-os na tela da
+# seguinte forma: “O usuário digitou {caractere1} e {caractere2}!”.
+caracter1=input('Digite um caracter:\n')
+caracter2=input('Digite outro caracter:\n')
+print(f'o usuario digitou {caracter1} e {caracter2}')
+print('O usuario digitou', caracter1, 'e', caracter2)
+
+
+Programa que le um número inteiro e imprimir seu
+# sucessor e seu antecessor.
+numero=int(input('digite um numero'))
+print(f'O antecessor é {numero-1}\n O sucessor é {numero+1}')
+
+
+Programa para entrar com a base a altura de um retângulo e
+# imprimir respectivamente o perímetro e a área correspondente.
+# b*h área
+# 2(h+b) perimetro
+b=float(input('Digite o valor da base: '))
+h=float(input('Digite o valor da altura: '))
+print(f'O valor do peremitro: {2*(h+b)}\nO valor da area: {b*h}')
+
+
+#imprimindo texto por posição
+texto = ' curso de python '
+print(texto[2])
+#apartir da 9 posição  até a posição 15
+print(texto[9:15])
+#apartir da 9 posição  até a posição 15, pulando de dois em dois
+print(texto[9:15:2])
+#do  inicio até a 8 posição
+print(texto[:8])
+#da 8 posição até a ultima
+print(texto[8:])
+#len verifica o tamanho do texto
+print(len(texto))
+# count conta quantas vezes aparece a plavra, caso não tenha retorna 0
+print(texto.count('python'))
+#find verifica se tem na frase e mostra a primeira posição
+print(texto.find('python'))
+#verifica se tem na frase e retorna True ou False
+print('Python' in texto)
+#subistitui a palavra antiga pela nova
+print(texto.replace('python', 'Java'))
+#todas a letras maiusculas
+print(texto.upper())
+#todas a letras minusculas
+print(texto.lower())
+#apenas a primeira maiuscula
+print(texto.capitalize())
+# a primeira de cada palavra maiuscula
+print(texto.title())
+#strip remove os espaços inuteis
+print(texto.strip())
+#rstrip remove os espaços inuteis da direita
+print(texto.rstrip())
+#lstrip remove os espaços inuteis da esquerda
+print(texto.lstrip())
+#adiciona o caracter no meio de cada caracter
+print("+".join(texto))
+#divide a frase em um array
+print(texto.split())
+#divide a frase em um array e mostra a ultima palavra
+fraseDividida=texto.split()
+print(fraseDividida[-1])
+#encontra aultima vez que aparce a plavra python
+print(texto.rfind('python'))
+
+
+
+Programa que le o nome completo de uma pessoas
+# e mostre
+#
+# O nome com todas as letras maiúsculas
+# O nome com todas as letras minúsculas
+# Quantas letras ao todo (sem considerar espaços)
+# Quantas letras tem o primeiro nome
+nome=input('Digite o seu nome')
+print('O nome em maiusculo: ',nome.upper())
+print('O nome em minusculo',nome.lower())
+print(f'O nome sem os espaços tem {len(nome.replace(" ", ""))}')
+nomedividido=nome.split()
+print(nomedividido)
+print('O tamanho do primeiro nome',len(nomedividido[0]))
+
+
+Programa que le um numero de 0 a 9999 e mostre
+# na tela cada um dos dígitos separados.
+# Ex: Digite um numero: 1834
+# Unidade: 4
+# Dezena: 3
+# Centena: 8
+# Milhar: 1
+
+numero=int(input('Digite um numero de 0 a 9999:\n '))
+unidade=numero % 10
+dezena=(numero//10) % 10
+centena=(numero//100) % 10
+milhar=(numero//1000) % 10
+print(f'unidade: {unidade}')
+print(f'dezena: {dezena}')
+print(f'centena: {centena}')
+print(f'milhar: {milhar}')
+
+
+Programa que le uma frase pelo teclado e mostre:
+# Quantas vezes aparece a letra "A"
+# Em que posição ela aparece a primeira vez
+# Em que posição ela aparece a ultima vez
+
+frase=input('Digite uma frase').lower()
+frase=frase.strip()
+print(frase.count('a'))
+print(frase.find('a')+1)
+print(frase.rfind('a')+1)
+
+
+Programa que le o nome completo de uma pessoa,
+# mostrando em seguida o primeiro e o ultimo nome
+# separadamente
+# Exemplo: Ana Maria De Souza
+# Primeiro: Ana
+# Ultimo: Souza
+nome=input('Digite seu nome completo:\n')
+primeiroNome=nome.find(' ')
+ultimoNome=nome.rfind(' ')
+print(nome[:primeiroNome])
+print(nome[ultimoNome:]).strip()
+################################################
+primeiroNome=nome.split()
+print(primeiroNome[0])
+print(primeiroNome[-1])
+
+
+
+
+
+
+
